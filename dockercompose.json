@@ -4,7 +4,7 @@
     "description": "compose template",
     "prefix": "dc:temp",
     "body": [
-      "version: '3.0.7'",
+      "version: '3.4'",
       "",
       "x-permission: &permission",
       "  user: ${UID_GID}",
