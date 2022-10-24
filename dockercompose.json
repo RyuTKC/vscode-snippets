@@ -1,0 +1,42 @@
+{
+	"compose-temp":{
+		"isFileTemplate": true,
+		"description": "compose template",
+		"prefix": "dc:temp",
+		"body": [
+			"version: '3.0.7'",
+			"",
+			"x-permission: &permission",
+			"  user: ${UID_GID}",
+			"",
+			"services:",
+			"  ${1:container1}:",
+			"    container_name: ${2:container-name}",
+			"    image: ${4:image}",
+			"    <<: *permission",
+			"    ports:",
+			"      - 8001:8080",
+			"    # entrypoint: [] or file.sh",
+			"    # command: []",
+			"    # volumes:",	
+      "    #   - ./hostPath:/containerPath",
+			"",
+			"# volumes:",
+			"# network:"
+		]
+	},
+	"container":{
+		"description": "1 container template",
+		"prefix": "dc:container",
+		"body": [
+			"${1:container1}:",
+			"  container_name: ${2:container-name}",
+			"  name: ${3:name}",
+			"  image: ${4:image}",
+			"  ports:",
+			"    - 8001:8080",
+			"  # volumes:",	
+      "  #   - ./host:/container",
+		]
+	}
+}
