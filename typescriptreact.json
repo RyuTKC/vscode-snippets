@@ -230,6 +230,14 @@
       "export default store;",
     ],
   },
+  "redux use": {
+    "description": "redux use (raw)",
+    "prefix": "tsr:rdx-use",
+    "body": [
+      "const dispatch = useDispatch()",
+      "const sortData = [...useSelector((state: RootState) => state.${1:myState}, shallowEqual)]"
+    ],
+  },
   "redux-toolkit hooks": {
     "description": "redux-toolkit hooks",
     "prefix": "tsr:rdxt-hooks",
@@ -277,4 +285,12 @@
       "export default counterSlice.reducer",
     ],
   },
+  "redux-toolkit use": {
+    "description": "redux-toolkit use",
+    "prefix": "tsr:rdxt-use",
+    "body": [
+      "const dispatch = useAppDispatch()",
+      "const ${1:variable} = useAppSelector((state) => state.${2:myState}.value, shallowEqual)",
+    ],
+  }
 }
