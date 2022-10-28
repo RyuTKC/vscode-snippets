@@ -6,9 +6,9 @@
   // Example:
   "Components": {
     "description": "component",
-    "prefix": "tsr:compo",
+    "prefix": "compo",
     "body": [
-      "import React from 'react'",
+      "import React { useEffect, useState, useContext, useReducer, useRef, useMemo } from 'react'",
       "",
       "const ${1:components} = () =>  {",
       "  return (",
@@ -23,7 +23,7 @@
   },
   "Components Arg": {
     "description": "component with arg ",
-    "prefix": "tsr:comarg",
+    "prefix": "comarg",
     "body": [
       "import React from 'react'",
       "",
@@ -44,7 +44,7 @@
   },
   "Props": {
     "description": "props",
-    "prefix": "tsr:props",
+    "prefix": "props",
     "body": [
       "type Props = {",
       "  ${1:arg}: {2|string,number,boolean|}",
@@ -53,7 +53,7 @@
   },
   "redux store": {
     "description": "redux store (raw)",
-    "prefix": "tsr:rdx-str&hst",
+    "prefix": "rdx:str&hst",
     "body": [
       "import { createStore, combineReducers, applyMiddleware, compose, } from 'redux';",
       "import { connectRouter, routerMiddleware } from 'connected-react-router'",
@@ -97,7 +97,7 @@
   },
   "redux types": {
     "description": "redux types (raw)",
-    "prefix": "tsr:rdx-types",
+    "prefix": "rdx:types",
     "body": [
       "import { Action } from 'redux';",
       "import { ThunkAction } from 'redux-thunk';",
@@ -132,7 +132,7 @@
   },
   "redux action": {
     "description": "redux action (raw)",
-    "prefix": "tsr:rdx-action",
+    "prefix": "rdx:action",
     "body": [
       "import { Action, ActionCreator } from 'redux';",
       "import { ${1:ActionType} } from './types';",
@@ -146,7 +146,7 @@
   },
   "redux reducer": {
     "description": "redux reducer (raw)",
-    "prefix": "tsr:rdx-reducer",
+    "prefix": "rdx:reducer",
     "body": [
       "import { ${1:MyState}, ${2:MyAction}, ${3:MyActionType} } from './types'",
       "import { Reducer } from 'redux';",
@@ -167,7 +167,7 @@
   },
   "redux operation": {
     "description": "redux operation (raw)",
-    "prefix": "tsr:rdx-ope",
+    "prefix": "rdx:ope",
     "body": [
       "import { ${1:${3:myAction}} } from './action'",
       "import { ThunkAction } from 'redux-thunk'",
@@ -185,7 +185,7 @@
   },
   "redux-toolkit store": {
     "description": "redux-toolkit store",
-    "prefix": "tsr:rdxt-str&hst",
+    "prefix": "rdxt:str&hst",
     "body": [
       "import { configureStore, MiddlewareArray, combineReducers, applyMiddleware, getDefaultMiddleware, Middleware, } from '@reduxjs/toolkit';",
       "import { connectRouter, routerMiddleware } from 'connected-react-router'",
@@ -232,7 +232,7 @@
   },
   "redux use": {
     "description": "redux use (raw)",
-    "prefix": "tsr:rdx-use",
+    "prefix": "rdx:use",
     "body": [
       "const dispatch = useDispatch()",
       "const sortData = [...useSelector((state: RootState) => state.${1:myState}, shallowEqual)]"
@@ -240,7 +240,7 @@
   },
   "redux-toolkit hooks": {
     "description": "redux-toolkit hooks",
-    "prefix": "tsr:rdxt-hooks",
+    "prefix": "rdxt:hooks",
     "body": [
       "import { useDispatch, useSelector } from 'react-redux'",
       "import type { TypedUseSelectorHook } from 'react-redux'",
@@ -253,7 +253,7 @@
   },
   "redux-toolkit slice": {
     "description": "redux-toolkit slice",
-    "prefix": "tsr:rdxt-slice",
+    "prefix": "rdxt:slice",
     "body": [
       "import { createSlice } from '@reduxjs/toolkit'",
       "import type { PayloadAction } from '@reduxjs/toolkit'",
@@ -287,7 +287,7 @@
   },
   "redux-toolkit use": {
     "description": "redux-toolkit use",
-    "prefix": "tsr:rdxt-use",
+    "prefix": "rdxt:use",
     "body": [
       "const dispatch = useAppDispatch()",
       "const ${1:variable} = useAppSelector((state) => state.${2:myState}.value, shallowEqual)",
