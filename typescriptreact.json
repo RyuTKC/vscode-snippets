@@ -16,7 +16,7 @@
       "// import toolkitStore, { history as toolkitHistory } from './reducks_toolkit/store';",
       "import { Provider } from 'react-redux';",
       "import { ConnectedRouter } from 'connected-react-router';",
-      "// import Routing from 'components/_RoutingV5';",
+      "// import Routing from './components/_RoutingV5';",
 
       "const target = document.getElementById('app');",
 
@@ -38,7 +38,7 @@
     "description": "component",
     "prefix": "re:compo",
     "body": [
-      "import React { useEffect, useState, useContext, useReducer, useRef, useMemo } from 'react'",
+      "import React, { useEffect, useState, useContext, useReducer, useRef, useMemo } from 'react'",
       "",
       "const ${1:components} = () =>  {",
       "  return (",
@@ -81,4 +81,30 @@
       "}",
     ],
   },
+  "Routing v5": {
+    "description": "router v5",
+    "prefix": "re:routerv5",
+    "body": [
+      "import 'core-js/stable';",
+      "import React from 'react';",
+      "import ${1/(^.)/${1:/downcase}/} from './pages/$1/${1:Page1}';",
+      "import ${2/(^.)/${1:/downcase}/} from './pages/$2/${2:page2}';",
+      "/****** routing version 5 ******/",
+      "import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'",
+      "",
+      "const RouteList = {",
+      "  ${1/(^.)/${1:/downcase}/}: '/${1/(^.)/${1:/downcase}/}',",
+      "  ${2/(^.)/${1:/downcase}/}: '/${2/(^.)/${1:/downcase}/}',",
+      "}",
+      "",
+      "export default () => {",
+      "  return (",
+      "    <Switch>",
+      "      <Route exact path={RouteList.${1/(^.)/${1:/downcase}/}} component={${1/(^.)/${1:/downcase}/}} />",
+      "      <Route exact path={RouteList.${2/(^.)/${1:/downcase}/}} component={${2/(^.)/${1:/downcase}/}} />",
+      "    </Switch>",
+      "  );",
+      "}",
+    ]
+  }
 }
