@@ -55,7 +55,7 @@
     "description": "component with arg ",
     "prefix": "re:comarg",
     "body": [
-      "import React from 'react'",
+      "import React, { useEffect, useState, useContext, useReducer, useRef, useMemo } from 'react'",
       "",
       "type Props = {",
       "  ${2:arg}: string",
