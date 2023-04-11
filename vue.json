@@ -1,0 +1,87 @@
+{
+	// Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Ts Vue component": {
+		"description": "component",
+		"prefix":"v:compo-base",
+		"body": [
+      "<script ${1|{lang=\"ts\",}>",
+			"import { defineComponent } from 'vue'",
+      "export default defineComponent({",
+      "  data() {",
+      "    return {",
+      "      ${2:data1}: ${3|\"string\",0,false|},",
+			"      ${4:class1}: ${5:'className'}",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    ${6:method1}(){",
+      "      const data = this.$2",
+      "    }",
+      "  }",
+      "})",
+      "</script>",
+      "",
+      "<template>",
+      "  <button @click=\"$6\" :class=\"$4\">count is: {{ $3 }}</button>",
+      "</template>",
+		]
+	},
+  "two way bind": {
+    "description": "two way bind",
+    "prefix": "v:v-model",
+    "body": [
+      "<script ${1|{lang=\"ts\",}>",
+      "export default {",
+      "  data() {",
+      "    return {",
+      "      text: ''",
+      "    }",
+      "  },",
+      "}",
+      "</script>",
+      "",
+      "<template>",
+      "  <input v-model=\"text\" placeholder=\"Type here\">",
+      "  <p>{{ text }}</p>",
+      "</template>",
+    ]
+  },
+  "if component": {
+    "description": "if-component",
+    "prefix": "v:v-if",
+    "body": [
+      "<script>",
+      "export default {",
+      "  data() {",
+      "    return {",
+      "      awesome: true",
+      "    }",
+      "  },",
+      "  methods: {",
+      "    toggle() {",
+      "      this.awesome = !this.awesome",
+      "    }",
+      "  }",
+      "}",
+      "</script>",
+      "",
+      "<template>",
+      "  <button @click=\"toggle\">toggle</button>",
+      "  <h1 v-if=\"awesome\">Vue is awesome!</h1>",
+      "  <h1 v-else>Oh no 😢</h1>",
+      "</template>",
+    ]
+  },
+}
