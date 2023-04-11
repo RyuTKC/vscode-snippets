@@ -12,11 +12,11 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Ts Vue component": {
+	"vue component": {
 		"description": "component",
 		"prefix":"v:compo-base",
 		"body": [
-      "<script ${1|{lang=\"ts\",}>",
+      "<script${1| lang=\"ts\", |}>",
 			"import { defineComponent } from 'vue'",
       "export default defineComponent({",
       "  data() {",
@@ -38,11 +38,30 @@
       "</template>",
 		]
 	},
+	"vue component extend": {
+		"description": "component",
+		"prefix":"v:compo-setup",
+		"body": [
+      "<script setup${1| lang=\"ts\", |}>",
+      "import { ref } from 'vue'",
+      "  const ${2:data1} = ref(${3|\"string\",0,false|})",
+      "  const ${4:data2} = ${5|\"string\",0,false|}",
+			"  const ${6:class1} = ${7:'className'}",
+      "  const ${8:method1} = () => {",
+      "    const data = $4",
+      "  }",
+      "</script>",
+      "",
+      "<template>",
+      "  <button @click=\"$8\" :class=\"$6\">count is: {{ $3 }}</button>",
+      "</template>",
+		]
+	},
   "two way bind": {
     "description": "two way bind",
     "prefix": "v:v-model",
     "body": [
-      "<script ${1|{lang=\"ts\",}>",
+      "<script${1| lang=\"ts\", |}>",
       "export default {",
       "  data() {",
       "    return {",
